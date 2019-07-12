@@ -9,6 +9,26 @@ from timeit import default_timer as timer
 
 import random
 
+CACHE_SIZE = 50_000_000
+
+cache = {}
+for p in range(CACHE_SIZE):
+    h = hashlib.sha256(str(p).encode()).hexdigest()
+    cache[p] = h
+
+print('cache size: ', sys.getsizeof(cache), 'bytes')
+
+
+def get_cached_hash(proof):
+    cached = cache.get(proof)
+
+    if not cached:
+        h = hashlib.sha256(str(proof).encode()).hexdigest()
+        cache[proof] = h
+        return h
+
+    return cached
+
 
 def proof_of_work(last_proof):
     """
@@ -22,14 +42,16 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
+
     proof = 0
-    #  TODO: Your code here
+    while not valid_proof(last_proof, proof):
+        proof += 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
 
-def valid_proof(last_hash, proof):
+def valid_proof(last_proof, proof):
     """
     Validates the Proof:  Multi-ouroborus:  Do the last six characters of
     the last hash match the first six characters of the proof?
@@ -38,7 +60,11 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    proof_hash = get_cached_hash(proof)
+    last_proof_hash = get_cached_hash(last_proof)
+
+    # proof_hash = hashlib.sha256(str(proof).encode()).hexdigest()
+    return last_proof_hash[-6:] == proof_hash[:6]
 
 
 if __name__ == '__main__':
