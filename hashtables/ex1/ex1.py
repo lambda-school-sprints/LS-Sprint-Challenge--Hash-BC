@@ -12,6 +12,21 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE
     """
+    if len(weights) < 2:
+        return None
+
+    if len(weights) == 2:
+        if sum(weights) == limit:
+            return (0, 1) if weights[0] > weights[1] else (1, 0)
+
+    for i, w in enumerate(weights):
+        hash_table_insert(ht, w, i)
+
+    for w in weights:
+        i1 = hash_table_retrieve(ht, w)
+        i2 = hash_table_retrieve(ht, limit - w)
+        if i2:
+            return (i1, i2) if i1 > i2 else (i2, i1)
 
     return None
 
