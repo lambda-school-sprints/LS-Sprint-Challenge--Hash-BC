@@ -18,25 +18,31 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Description
 
-This sprint challenge is divided up into three parts:  Hash tables (24 points), blockchain (12 points) and a short interview (20 points). There is also a stretch goal in the blockchain section which should only be attempted after the rest of the problems have been completed.
+This sprint challenge is divided up into three parts: Hash tables (24 points), blockchain (12 points) and a short interview (20 points). There is also a stretch goal in the blockchain section which should only be attempted after the rest of the problems have been completed.
 
 ## Interview Questions
 
 During your challenge, you will be pulled aside by a PM for a 5 minute interview. During this interview, you will be expected to answer the following three questions:
 
-  * 1. What is a blockchain and how does it work?
-  * 2. What is an array and how does it work?
-  * 3. What is a hash table and how does it work?
+- 1. What is a blockchain and how does it work?
+
+> A blockchain is a distributed ledger made of a chain of blocks containing transaction data that are linked by hashes. The hash of a block is included in the next block of data so that any alteration of a block will result in all the subsequent block being invalidated. Each node in the network has a copy of the chain and the longest chain is considered the true chain.
+
+- 2. What is an array and how does it work?
+
+> An array is a contiguous block of memory that allows us to store pieces of data in an arbitrary number of "buckets" that can be accessed with a integer index in constant time.
+
+- 3. What is a hash table and how does it work?
+
+> A hash table is a hybrid data structure that allows (almost) constant time lookup of a key-value pair. A hashing function is used to determine which index in an array that a key goes into. When there is more than one element at that index, the values can be chained together with a linked list. Lookups and writes are constant time on average, but may be o(n) in the worst case when the hash table needs to be resized.
 
 You will receive points at the PM's discretion based on the following criteria:
 
-  * 20: Would love to have this person on my team!
-  * 14: Wouldn't mind working with this person.
-  * 10: Knowledge is lacking OR poor communication skills
-  *  6: Knowledge is lacking AND poor communication skills
-  *  2: You get 2 points for showing up
-
-
+- 20: Would love to have this person on my team!
+- 14: Wouldn't mind working with this person.
+- 10: Knowledge is lacking OR poor communication skills
+- 6: Knowledge is lacking AND poor communication skills
+- 2: You get 2 points for showing up
 
 ## Project Set Up
 
@@ -46,44 +52,46 @@ For the hash tables portion of the sprint challenge, you'll be working through t
 
 A hash table implementation has been included for you already. Your task is to get the tests passing (ideally using a hash table to do it). You can remind yourself of what hash table functions are available by looking at the hashtable.py file that is included in each exercise directory (note that the hash table implementations for both exercises differ slightly).
 
-*You may not use any advanced built-in Python functions to solve these problems.*
+_You may not use any advanced built-in Python functions to solve these problems._
 
 #### [Blockchain]
 
 For the blockchain portion of the challenge, you will be writing code for a new miner that will solve a different Proof of Work algorithm than the one we have been working with.
 
-Your goal is to mine at least one coin.  Keep in mind that with many people competing over the same coins, this may take a long time.  By our math, we expect that an average solution should be the first to find a solution at least once in an hour or two of mining.  
+Your goal is to mine at least one coin. Keep in mind that with many people competing over the same coins, this may take a long time. By our math, we expect that an average solution should be the first to find a solution at least once in an hour or two of mining.
 
 ## Minimum Viable Product
 
-You can earn 35 points from the main coding portion of the sprint challenge.  Be sure to budget your time wisely.  The Blockchain challenge is fun, but it is only 1/3 of the points availible for the coding portion of this challenge.  
+You can earn 35 points from the main coding portion of the sprint challenge. Be sure to budget your time wisely. The Blockchain challenge is fun, but it is only 1/3 of the points availible for the coding portion of this challenge.
 
 #### [Blockchain](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/blockchain) - 12 pts
-  * ex1 - 12 pts
+
+- ex1 - 12 pts
 
 #### [Hash Tables](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/hashtables) - 24 pts
-  * ex1 - 12 pts
-  * ex2 - 12 pts
+
+- ex1 - 12 pts
+- ex2 - 12 pts
 
 Both Hash Table problems will be graded as follows:
-  * 1: Code attempted
-  * 2: Code resembles the correct solution
-  * 3: Tests pass
-  * 4: Tests pass, using the existing hash table implementation, no flake8 complaints
-  * 5: Tests pass, using the existing hash table implementation, no flake8 complaints, linear runtime complexity
 
+- 1: Code attempted
+- 2: Code resembles the correct solution
+- 3: Tests pass
+- 4: Tests pass, using the existing hash table implementation, no flake8 complaints
+- 5: Tests pass, using the existing hash table implementation, no flake8 complaints, linear runtime complexity
 
 ### Grading
 
-Students can receive up to 55 points in total for this Sprint Challenge (not including 4 extra credit points). 
+Students can receive up to 55 points in total for this Sprint Challenge (not including 4 extra credit points).
 
-  * __Challenge__: 35
-  * __Interview__: 20
+- **Challenge**: 35
+- **Interview**: 20
 
---------
+---
 
 The score distributions are as follows:
 
-  * __3__: >= 48 points
-  * __2__: >= 35 points
-  * __1__: < 34 points 
+- **3**: >= 48 points
+- **2**: >= 35 points
+- **1**: < 34 points
